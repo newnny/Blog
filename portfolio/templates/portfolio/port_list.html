@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<ul>
+  <li><a href="{% url 'home' %}">Home</a></li>
+  <li><a href="{% url 'about' %}">About</a></li>
+  <li><a href="{% url 'issues:list' %}">Issue</a></li>
+  <li><a class="active" href="{% url 'portfolio:list' %}">Project</a></li>
+  <li><a href="{% url 'articles:list' %}">Note</a></li>
+  <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
+</ul>
+
+  <h2>Project List</h2>
+  <div class="portfolio">
+    {% for port in portfolio %}
+      <div class="port">
+        <h3><a href="{% url 'portfolio:detail' port.slug %}">{{ port.title }}</a></h3>
+        <p>{{ port.shortbody }}</p>
+        <p>{{ port.date }}</p>
+        <p class="author">posted by Yuni{{port.author.username}}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<ul>
+  <li><a href="{% url 'home' %}">Home</a></li>
+  <li><a href="{% url 'about' %}">About</a></li>
+  <li><a href="{% url 'issues:list' %}">Issue</a></li>
+  <li><a href="{% url 'portfolio:list' %}">Project</a></li>
+  <li><a class="active" href="{% url 'articles:list' %}">Note</a></li>
+  <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
+</ul>
+
+
+  <h2>Note List</h2>
+  <div class="articles">
+    {% for article in articles %}
+      <div class="article">
+        <h3><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></h3>
+        <p>{{ article.shortbody }}</p>
+        <p>{{ article.date }}</p>
+        <p class="author">posted by Yuni{{article.author.username}}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

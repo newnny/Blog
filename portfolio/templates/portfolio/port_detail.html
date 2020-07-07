@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+
+<ul>
+  <li><a href="{% url 'home' %}">Home</a></li>
+  <li><a href="{% url 'about' %}">About</a></li>
+  <li><a href="{% url 'issues:list' %}">Issue</a></li>
+  <li><a class="active" href="{% url 'portfolio:list' %}">Project</a></li>
+  <li><a href="{% url 'articles:list' %}">Note</a></li>
+  <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
+</ul>
+
+<div class="port-detail">
+  <div class="port">
+    <h2>{{port.title}}</h2>
+    <img src="{{port.thumb.url}}">
+    <p>{{port.body}}</p>
+    <p>{{port.date}}</p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+
+<ul>
+  <li><a href="{% url 'home' %}">Home</a></li>
+  <li><a href="{% url 'about' %}">About</a></li>
+  <li><a class="active" href="{% url 'issues:list' %}">Issue</a></li>
+  <li><a href="{% url 'portfolio:list' %}">Project</a></li>
+  <li><a href="{% url 'articles:list' %}">Note</a></li>
+  <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
+</ul>
+
+
+<div class="issue-detail">
+  <div class="issue">
+    <h2>{{issue.title}}</h2>
+    <img src="{{issue.thumb.url}}">
+    <div class="newpaper">
+      <p>{{issue.body}}</p>
+      <p>{{issue.date}}</p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
