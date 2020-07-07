@@ -1,1 +1,6 @@
 db.sqlite3
+articles/__pycache__
+portfolio/__pycache__
+contact/__pycache__
+issues/__pycache__
+myblog/__pycache__
