@@ -13,19 +13,34 @@
     <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
   </ul>
 
-  <img class="header" src="{% static 'monstera.jpg' %}"/>
-
-  <h2> </h2>
-
-  <p></p>
-
-  <div class="category">
-    <div class="cat">
-      <a href="{% url 'issues:list' %}"><img src="{% static 'issue.jpg' %}"> ISSUES </a></div>
-    <div class="cat">
-      <a href="{% url 'portfolio:list' %}"><img src="{% static 'office.jpg' %}"> PROJECTS </a></div>
-    <div class="cat">
-      <a href="{% url 'articles:list' %}"><img src="{% static 'notess.jpg' %}"> PERSONAL NOTES </a></div>
+  <img class="header" src="{% static 'mainpage.jpg' %}"/>
+  <div class="home-info">
+    <p>여유:YEOYU</p>
+    <p>It means having residual space in your mind so that you can think or behave more generously </p>
+    <p>Hope we all have more 여유:YEOYU in our life</p>
   </div>
+
+  <img class ="main-issue" src="{% static 'issues.jpg' %}">
+  <div class="issue-info">
+    <h2>ISSUE</h2>
+    <p>Life style journal</p>
+    <p>aim to issue every 4 month</p>
+    <p>with contents of all about our life</p>
+
+  </div>
+
+  <img class ="main-port" src="{% static 'portfolio.jpg' %}">
+  <div class="port-info">
+    <h2>PORTFOLIO</h2>
+    <p>About my projects</p>
+  </div>
+
+  <img class = "main-note" src="{% static 'note.jpg' %}" >
+  <div class="note-info">
+    <h2>NOTES</h2>
+    <p>Collecting articles</p>
+    <p>Writing articles</p>
+  </div>
+  <p></p>
 
 {% endblock %}

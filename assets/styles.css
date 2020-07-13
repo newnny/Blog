@@ -1,3 +1,4 @@
+
 body{
   background: #8a8a5c;
   font-family: 'Abril Fatface', cursive;
@@ -7,6 +8,7 @@ body{
 .wrapper{
   max-width: 960px;
   margin: 0 auto;
+  color: white;
 }
 
 
@@ -14,6 +16,59 @@ body{
   width: 100%;
   height: 530px;
   opacity: 0.9;
+}
+.home-info{
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  left: 27%;
+  color: white;
+  text: fixed;
+}
+
+.main-issue {
+  width: 100%;
+  height: 530px;
+  opacity: 0.9;
+}
+
+.main-port {
+  width: 100%;
+  height: 530px;
+  opacity: 0.9;
+}
+
+.main-note {
+  width: 100%;
+  height: 530px;
+  opacity: 0.9;
+}
+
+.issue-info{
+  text-align: center;
+  position: absolute;
+  top: 111%;
+  right: 68%;
+  color: white;
+  text: fixed;
+}
+
+.port-info{
+  text-align: center;
+  position: absolute;
+  top: 212%;
+  left: 40%;
+  color: white;
+  text: fixed;
+}
+
+.note-info{
+  text-align: right;
+  position: absolute;
+  top: 280%;
+  right: 36%;
+  color: white;
+  text: fixed;
 }
 
 ul {
@@ -63,20 +118,17 @@ div.wrapper p{
 }
 
 div.category{
-  display: grid;
+
   position: relative;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 25px;
+
 }
 
 div.category div{
   text-align: center;
-  padding: 10px;
-  border: 4px solid #86592d;
-  border-radius: 5px;
-  position: relative;
-  padding-bottom: 40px;
-  font-size: 1.3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
 }
 
@@ -96,15 +148,18 @@ div.category div img:hover{
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px
 }
+
 .article{
-  padding: 10px;
-  border: 3px solid #86592d;
+
   position: relative;
   padding-bottom: 40px;
+  background-color: #5a6c73;
+  text-align: center
 }
 
 .article h2{
   font-size: 1.2em;
+  color: white;
 }
 
 .article-detail .article{
@@ -199,22 +254,37 @@ div.category div img:hover{
 
 
 .contactimg{
+  background-color: #cccccc;
   float: right;
-  display: block;
-  margin-left: 30;
-  margin-right: auto;
-  width: 45%;
-  height: 660px}
+  height: 345px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
   .detail{
     float:left;
   }
 
   .aboutimg{
-   float: right;
-   border-radius: 45%;
-   width: 45%;
+    background-color: #cccccc;
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
   }
+
+  .about-info{
+    text-align: left;
+    position: absolute;
+    top: 70%;
+    right: 42%;
+    transform: translate(-50%, -50%);
+    color: white;
+    }
 
   .button {
     background-color:#d9b38c;

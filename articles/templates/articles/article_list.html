@@ -1,5 +1,5 @@
 {% extends 'base_layout.html' %}
-
+{% load static %}
 {% block content %}
 
 <ul>
@@ -16,10 +16,11 @@
   <div class="articles">
     {% for article in articles %}
       <div class="article">
-        <h3><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></h3>
-        <p>{{ article.shortbody }}</p>
-        <p>{{ article.date }}</p>
-        <p class="author">posted by Yuni{{article.author.username}}</p>
+        <h3 style = "text-align: center"><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></h3>
+        <p><img src="{{article.thumb.url}}"></p>
+        <p style = "font-size: 22px">{{ article.shortbody }}</p>
+        <p style = "font-size: 14px" >{{ article.date }}</p>
+        <p style = "font-size: 14px" class="author">posted by Yuni{{article.author.username}}</p>
       </div>
     {% endfor %}
   </div>
