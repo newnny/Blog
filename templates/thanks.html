@@ -2,24 +2,27 @@
 {% load static %}
 {% block content %}
 
+
+
+<div class="navbar-extends">
   <ul>
     <li><a href="{% url 'home' %}">Home</a></li>
-    <li><a class="active" href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
     <li><a href="{% url 'issues:list' %}">Issue</a></li>
     <li><a href="{% url 'portfolio:list' %}">Project</a></li>
     <li><a href="{% url 'articles:list' %}">Note</a></li>
-    <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
+    <li style="float:right; margin-right:30px;"><a href="{% url 'contact' %}">Contact</a></li>
   </ul>
+</div>
 
-
-  <div class="thanks">
-    <h2>Thank YOU</h2>
-    <p>I've reveived your message succesfully :)</p>
-    <p>If you want to leave this page,</p>
-    <p>Please <a target = "home" href="{% url 'home' %}">PRESS HERE</a></p>
-  </div>
-
-
+<div class="jumbotron text-center">
+  <h1 class="display-3">Thank You!</h1>
+  <p class="lead"><strong>I will get back to you ASAP:)</strong></p>
+  <hr>
+  <p class="lead">
+    <a class="btn btn-outline-dark" href="{% url 'home' %}" role="button">Continue to homepage</a>
+  </p>
+</div>
 
 
 

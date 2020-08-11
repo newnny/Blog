@@ -8,18 +8,30 @@
   <li><a href="{% url 'issues:list' %}">Issue</a></li>
   <li><a class="active" href="{% url 'portfolio:list' %}">Project</a></li>
   <li><a href="{% url 'articles:list' %}">Note</a></li>
-  <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
+  <li style="float:right; margin-right:30px;"><a href="{% url 'contact' %}">Contact</a></li>
 </ul>
 
-  <h2>Project List</h2>
-  <div class="portfolio">
-    {% for port in portfolio %}
-      <div class="port">
-        <h3><a href="{% url 'portfolio:detail' port.slug %}">{{ port.title }}</a></h3>
-        <p>{{ port.shortbody }}</p>
-        <p>{{ port.date }}</p>
-        <p class="author">posted by Yuni{{port.author.username}}</p>
+  <h1 class = "text-white text-center">Project List</<h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="article card" style="width: 18rem;">
+        <div class="portfolio">
+          {% for port in portfolio %}
+            <div class="port">
+              <img class="card-img-top" src="{{portfolio.thumb.url}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ port.title }}</h5>
+                <p class="card-text">{{ port.shortbody }}</p>
+                <p class="card-text">{{ port.date }}</p>
+                <a href="{% url 'portfolio:detail' article.slug %}" class="btn btn-outline-dark">Read More</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
       </div>
-    {% endfor %}
+    </div>
   </div>
+
+
 {% endblock %}

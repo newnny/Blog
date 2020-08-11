@@ -9,19 +9,18 @@
   <li><a class="active" href="{% url 'issues:list' %}">Issue</a></li>
   <li><a href="{% url 'portfolio:list' %}">Project</a></li>
   <li><a href="{% url 'articles:list' %}">Note</a></li>
-  <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
+  <li style="float:right; margin-right:30px;"><a href="{% url 'contact' %}">Contact</a></li>
 </ul>
 
 
-<div class="issue-detail">
+<div class="issue-detail select-none ...">
   <div class="issue">
     <h2>{{issue.title}}</h2>
     <img src="{{issue.thumb.url}}">
     <div class="newpaper">
-      <p>{{issue.body}}</p>
+      <p class = "select-none ...">{{issue.body}}</p>
       <p>{{issue.date}}</p>
     </div>
-
   </div>
 </div>
 {% endblock %}

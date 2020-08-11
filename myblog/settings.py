@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["164.90.187.112",
 "localhost",
+"younhee.me",
 ]
 
 
@@ -43,7 +44,13 @@ INSTALLED_APPS = [
     'issues',
     'portfolio',
     'contact',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

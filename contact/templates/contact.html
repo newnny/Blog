@@ -1,9 +1,12 @@
 
 {% extends 'base_layout.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
+
+<!-- NAV bar-->
   <ul>
     <li><a href="{% url 'home' %}">Home</a></li>
     <li><a href="{% url 'about' %}">About</a></li>
@@ -12,21 +15,51 @@
     <li><a href="{% url 'articles:list' %}">Note</a></li>
     <li style="float:right"><a class="active" href="{% url 'contact' %}">Contact</a></li>
   </ul>
+<!-- NAV bar end -->
 
-  <h2>Contact</h2>
-  <div><img class="contactimg" src="{% static 'contact.jpg' %}"></div>
-  <p>Thank you for contacting me</p>
+  <h1 class= "text-white text-center">Contact</h1>
 
-  <form action= "{% url 'contact' %}", method = "POST">
-    {% csrf_token %}
-    <table>
-      {{form.as_table}}
-        <tr></tr>
-    </table>
-    <button class = "button" type="submit" name="send">
-       <i class="fa fa-paper-plane"></i> SEND MESSAGE
-    </button>
+<form method="post">
+  {% csrf_token %}
+  <!--container-->
+  <div class="container-fluid-contact bg-grey text-white">
+    <h2 class="text-center">Please leave your message</h2>
+    <!--outline row-->
+    <div class="row align-items-center">
+      <!--col 1-->
+      <div class="col-sm-4 text-center">
+        <h4>Contact me and I'll get back to you ASAP.<br>THANKS</h4>
+        <p><span class="glyphicon glyphicon-envelope"></span><a href="https://github.com/newnny" class="btn btn-outline-dark pull-right">See Github</a></p>
+        <p><span class="glyphicon glyphicon-envelope"></span><a href="https://linkedin.com/newnny" class="btn btn-outline-dark pull-right">See Linkedin</a></p>
+      </div>
+      <!--col 1 end-->
+      <!--col 2-->
+      <div class="col-sm-7">
+        <!--row-->
+        <div class="row">
+          <div class="col-sm-6">
+            {{ form.name|as_crispy_field }}
+          </div>
+          <div class="col-sm-6">
+            {{ form.email|as_crispy_field }}
+          </div>
+        </div>
+        <!--row end-->
+        {{ form.subject|as_crispy_field }}
+        {{ form.message|as_crispy_field }}
+        <div class="row">
+          <div class="col-sm-12">
+            <button class="btn pull-right" style="background-color:#DAA520;" type="submit">Send Message</button>
+          </div>
+        </div>
+      </div>
+      <!--col 2 end-->
+    </div>
+    <!--outline row end-->
+  </div>
+    <!--container end-->
+</form>
 
-  </form>
+
 
 {% endblock %}

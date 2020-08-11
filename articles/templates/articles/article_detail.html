@@ -3,22 +3,52 @@
 
 {% block content %}
 
-<ul>
-  <li><a href="{% url 'home' %}">Home</a></li>
-  <li><a href="{% url 'about' %}">About</a></li>
-  <li><a href="{% url 'issues:list' %}">Issue</a></li>
-  <li><a href="{% url 'portfolio:list' %}">Project</a></li>
-  <li><a class="active" href="{% url 'articles:list' %}">Note</a></li>
-  <li style="float:right"><a href="{% url 'contact' %}">Contact</a></li>
-</ul>
-
-
-<div class="article-detail">
-  <div class="article">
-    <h2>{{article.title}}</h2>
-    <img src="{{article.thumb.url}}">
-    <p>{{article.body}}</p>
-    <p>{{article.date}}</p>
-  </div>
+<!-- NAV bar -->
+<div class="navbar-extends">
+  <ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'issues:list' %}">Issue</a></li>
+    <li><a href="{% url 'portfolio:list' %}">Project</a></li>
+    <li><a class="active" href="{% url 'articles:list' %}">Note</a></li>
+    <li style="float:right; margin-right:30px;"><a href="{% url 'contact' %}">Contact</a></li>
+  </ul>
 </div>
+  <!-- NAV bar end-->
+
+
+<!-- container for a post -->
+<div class="container" style="background: #d6d1c2; padding-top: 5px; padding-bottom: 3px;">
+  <!-- row1 start -->
+  <div class="row">
+    <div class="col">
+      <h2 class="card-title text-center">{{article.title}}</h2>
+    </div>
+  </div>
+  <!-- row2 start -->
+  <div class="row">
+    <div class="col-md-4">
+      <img style="width: 25rem; padding: 0;" src="{{article.thumb.url}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body" style="float-right;">
+        <p class="card-text">{{article.body}}</p>
+        <p class="card-text"><small class="text-muted">{{article.date}}</small></p>
+      </div>
+    </div>
+  </div>
+  <!-- row2 end -->
+  <!-- row3 -->
+  <div class="row">
+    <div class="col text-right">
+      <small class="text-muted pull-right">
+        <a href="{% url 'articles:list' %}" class="btn btn-outline-dark">Back to list</a>
+      </small>
+    </div>
+  </div>
+  <!-- row3 end -->
+</div>
+<!-- container end -->
+
+
 {% endblock %}
