@@ -1,36 +1,32 @@
 {% extends 'base_layout.html' %}
-
+{% load static %}
 {% block content %}
 
-<ul>
-  <li><a href="{% url 'home' %}">Home</a></li>
-  <li><a href="{% url 'about' %}">About</a></li>
-  <li><a class="active" href="{% url 'issues:list' %}">Issue</a></li>
-  <li><a href="{% url 'portfolio:list' %}">Project</a></li>
-  <li><a href="{% url 'articles:list' %}">Note</a></li>
-  <li style="float:right; margin-right:30px;"><a href="{% url 'contact' %}">Contact</a></li>
-</ul>
+  <ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a class="active" href="{% url 'issues:list' %}">Issue</a></li>
+    <li><a href="{% url 'portfolio:list' %}">Project</a></li>
+    <li><a href="{% url 'articles:list' %}">Note</a></li>
+    <li style="float:right; margin-right:30px;"><a href="{% url 'contact' %}">Contact</a></li>
+  </ul>
 
   <h1 class = "text-white text-center">Issue List</h1>
 
-  <div class="container">
-    <div class="row">
-      <div class="issue card" style="width: 18rem;">
-        <div class="issues">
+    <div class="container">
+      <div class="row">
+        <div class="issue card" style="width: 18rem;">
           {% for issue in issuess %}
-            <div class="issue">
-              <img class="card-img-top" src="{{issue.thumb.url}}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{ issue.title }}</h5>
-                <p class="card-text">{{ issue.shortbody }}</p>
-                <p class="card-text">{{ issue.date }}</p>
-                <a href="{% url 'issues:detail' issue.slug %}" class="btn btn-outline-dark">Read More</a>
-              </div>
+            <img class="card-img-top" src="{{issue.thumb.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ issue.title }}</h5>
+              <p class="card-text">{{ issue.shortbody }}</p>
+              <p class="card-text">{{ issue.date }}</p>
+              <a href="{% url 'issues:detail' issue.slug %}" class="btn btn-outline-dark">Read More</a>
             </div>
           {% endfor %}
         </div>
       </div>
     </div>
-  </div>
 
 {% endblock %}

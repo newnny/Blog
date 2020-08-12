@@ -12,12 +12,41 @@
   <li style="float:right; margin-right:30px;"><a href="{% url 'contact' %}">Contact</a></li>
 </ul>
 
-<div class="port-detail select-none ...">
-  <div class="port">
-    <h2>{{port.title}}</h2>
-    <img src="{{port.thumb.url}}">
-    <p class = "select-none ...">{{port.body}}</p>
-    <p>{{port.date}}</p>
+
+<!-- container for a post -->
+<div class="container" style="background: #d6d1c2; padding-top: 5px; padding-bottom: 3px;">
+  <!-- row1 start -->
+  <div class="row">
+    <div class="col">
+      <h2 class="card-title text-center">{{port.title}}</h2>
+    </div>
   </div>
+  <!-- row2 start -->
+  <div class="row">
+    <div class="col-md-4">
+      <img style="width: 25rem; padding: 0;" src="{{port.thumb.url}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body" style="float-right;">
+        <p class="card-text">{{port.body}}</p>
+        <p class="card-text"><small class="text-muted">{{port.date}}</small></p>
+      </div>
+    </div>
+  </div>
+  <!-- row2 end -->
+  <!-- row3 -->
+  <div class="row">
+    <div class="col text-right">
+      <small class="text-muted pull-right">
+        <a href="https://www.github.com/newnny" class="btn btn-outline-dark">See github</a>
+      </small>
+      <small class="text-muted pull-right">
+        <a href="{% url 'portfolio:list' %}" class="btn btn-outline-dark">Back to list</a>
+      </small>
+    </div>
+  </div>
+  <!-- row3 end -->
 </div>
+<!-- container end -->
+
 {% endblock %}

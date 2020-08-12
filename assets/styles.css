@@ -6,9 +6,9 @@ body{
 }
 
 .container-fluid {
-  padding-top: 80px;
-  padding-bottom: 80px;
-  line-height: 40px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  line-height:40px;
 }
 
 .container-fluid-contact {
@@ -20,13 +20,16 @@ body{
 .bg-1 {
   background-color: #c2baa3;
   color: black;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  line-height:70px;
 }
 .bg-2 {
   background-color: #998c66;
   color: #ffffff;
 }
 .bg-3 {
-  background-color: ##c2baa3;
+  background-color: #c2baa3;
   color: #555555;
 }
 

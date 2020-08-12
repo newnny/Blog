@@ -12,6 +12,7 @@ class Issue(models.Model):
     thumb = models.ImageField(default = 'degault.jpg', blank =True)
     # add in thumbnail urlpatterns
     # add in auther later
+    
     def __str__(self):
         return self.title
 

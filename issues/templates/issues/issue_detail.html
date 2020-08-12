@@ -13,14 +13,39 @@
 </ul>
 
 
-<div class="issue-detail select-none ...">
-  <div class="issue">
-    <h2>{{issue.title}}</h2>
-    <img src="{{issue.thumb.url}}">
-    <div class="newpaper">
-      <p class = "select-none ...">{{issue.body}}</p>
-      <p>{{issue.date}}</p>
+
+<!-- container for a post -->
+<div class="container" style="background: #d6d1c2; padding-top: 5px; padding-bottom: 3px;">
+  <!-- row1 start -->
+  <div class="row">
+    <div class="col">
+      <h2 class="card-title text-center">{{issue.title}}</h2>
     </div>
   </div>
+  <!-- row2 start -->
+  <div class="row">
+    <div class="col-md-4">
+      <img style="width: 25rem; padding: 0;" src="{{issue.thumb.url}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body" style="float-right;">
+        <p class="card-text">{{issue.body}}</p>
+        <p class="card-text"><small class="text-muted">{{issue.date}}</small></p>
+      </div>
+    </div>
+  </div>
+  <!-- row2 end -->
+  <!-- row3 -->
+  <div class="row">
+    <div class="col text-right">
+      <small class="text-muted pull-right">
+        <a href="{% url 'issues:list' %}" class="btn btn-outline-dark">Back to list</a>
+      </small>
+    </div>
+  </div>
+  <!-- row3 end -->
 </div>
+  <!-- container end -->
+
+  
 {% endblock %}
