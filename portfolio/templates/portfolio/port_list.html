@@ -17,21 +17,19 @@
     <div class="row">
       {% for port in portfolio %}
       <div class="col-sm">
-        <div class="article card" style="width: 18rem;">
-          <div class="portfolio">
-            <img class="card-img-top" src="{{port.thumb.url}}" alt="Card image cap" style="height: 200px;">
-              <div class="card-body" style="height: 230px; background: #c2baa3;">
-                <h5 class="card-title">{{ port.title }}</h5>
-                <p style="font-size: 18px;" class="card-text">{{ port.shortbody }}</p>
-                <p style="font-size: 18px;" class="card-text">{{ port.date }}</p>
-                <a href="{% url 'portfolio:detail' port.slug %}" class="btn btn-outline-dark">Read More</a>
-              </div>
-            </div>
+        <div class="port card" style="width: 18rem;">
+          <img class="card-img-top" src="{{port.thumb.url}}" alt="Card image cap" style="height: 200px;">
+          <div class="card-body" style="height: 220px; background: #c2baa3;">
+            <h5 class="card-title">{{ port.title }}</h5>
+            <p style="font-size: 18px" class="card-text">{{ port.shortbody }}</p>
+            <p style="font-size: 18px" class="card-text">{{ port.date }}</p>
+            <a href="{% url 'portfolio:detail' port.slug %}" class="btn btn-outline-dark">Read More</a>
           </div>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
     </div>
+  </div>
 
 
 {% endblock %}

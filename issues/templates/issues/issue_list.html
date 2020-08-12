@@ -13,20 +13,23 @@
 
   <h1 class = "text-white text-center">Issue List</h1>
 
-    <div class="container">
-      <div class="row">
+  <div class="container">
+    <div class="row">
+      {% for issue in issues %}
+      <div class="col-sm">
         <div class="issue card" style="width: 18rem;">
-          {% for issue in issuess %}
-            <img class="card-img-top" src="{{issue.thumb.url}}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{ issue.title }}</h5>
-              <p class="card-text">{{ issue.shortbody }}</p>
-              <p class="card-text">{{ issue.date }}</p>
-              <a href="{% url 'issues:detail' issue.slug %}" class="btn btn-outline-dark">Read More</a>
-            </div>
-          {% endfor %}
+          <img class="card-img-top" src="{{issue.thumb.url}}" alt="Card image cap" style="height: 200px;">
+          <div class="card-body" style="height: 200px; background: #c2baa3;">
+            <h5 class="card-title">{{ issue.title }}</h5>
+            <p class="card-text">{{ issue.shortbody }}</p>
+            <p class="card-text">{{ issue.date }}</p>
+            <a href="{% url 'issues:detail' issue.slug %}" class="btn btn-outline-dark">Read More</a>
+          </div>
         </div>
       </div>
+      {% endfor %}
     </div>
+  </div>
+
 
 {% endblock %}

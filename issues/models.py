@@ -10,9 +10,10 @@ class Issue(models.Model):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add = True)
     thumb = models.ImageField(default = 'degault.jpg', blank =True)
+    file = models.FileField(blank =True)
     # add in thumbnail urlpatterns
     # add in auther later
-    
+
     def __str__(self):
         return self.title
 
