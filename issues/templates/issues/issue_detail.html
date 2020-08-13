@@ -25,15 +25,18 @@
   <!-- row2 start -->
   <div class="row">
     <div class="col-md-4">
-      <img style="width: 25rem; padding: 0;" src="{{issue.thumb.url}}">
+      <img style="width: 25rem; height: 370px; padding: 0;" src="{{issue.thumb.url}}">
     </div>
     <div class="col-md-8">
       <div class="card-body" style="float-right;">
-        <p class="card-text">{{issue.body}}</p>
-        <a href="{{issue.file.url}}"></a>
-          <button type="button" class="btn" style="background-color:#DAA520;">Press to see the Issue</button>
-        <p class="card-text"><small class="text-muted">{{issue.date}}</small></p>
+        <p style = "font-size: 18px" class="card-text">{{issue.body}}</p>
+        <p class="card-text"><small style = "font-size: 16px" class="text-muted">{{issue.date}}</small></p>
       </div>
+      <div class="card-body" style="float-right;">
+          <a href="{{issue.file.url}}">
+          <button type="button" class="btn" style="background-color:#DAA520;">Press to see the Issue</button>
+      </div>
+
     </div>
   </div>
   <!-- row2 end -->
