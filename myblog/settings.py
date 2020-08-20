@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["164.90.187.112",
 "localhost",
 "younhee.me",
+"www.younhee.me"
 ]
 
 
